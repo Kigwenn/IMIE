@@ -8,7 +8,7 @@
 <body>
 <?php
 
-var_dump($_POST);
+//var_dump($_POST);
 echo "<br/>";
 
 $bdd = new PDO('mysql:host=localhost; dbname=gest_bien; charset=utf8','root','Idefix72!');
@@ -19,13 +19,11 @@ $req -> execute(array(
 		'fk_option'=>$_POST['option'],
 		));
 
-var_dump($req->errorInfo());
+//var_dump($req->errorInfo());
 
 echo 'Resultat enregistrer !';
 ?>
 <hr/>
-<FORM ACTION="index.php">
-<input type="submit" value=" Retour "/>
-</FORM>
+<input type="button" value=" Retour " onclick="javascript:location.href='index.php'">
 </body>
 </html>

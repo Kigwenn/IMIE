@@ -12,7 +12,7 @@
 		<label for="nom"><h3>saisie des champs<h3></label>
 		<tr>
 			<td><label for="nom">Nom du bien</label> : <input type="text" name="nom" id="nom" /></td>
-			<td><label for="nom">Type du bien </label> : <input type="text" id="type" name="fk_type" /></td>
+			<td><label for="nom">Type du bien </label> : <input type="text" id="type" name="type" /></td>
 			<td><label for="nom">Prix</label> : <input type="text" id="prix" name="prix" /></td>
 			<td><label for="nom">Surface</label> : <input type="text" id="surface" name="surface" /></td>
 		</tr>	
@@ -30,11 +30,31 @@
 		</tr>
 	</table>
 	<br/>
+<?php
+$bdd = new PDO('mysql:host=localhost; dbname=gest_bien; charset=utf8','root','Idefix72!');
+echo"<h2> Ref option</h2>";
+$req = $bdd->query('SELECT id, nom FROM `option`');
+echo '<table>';
+echo '<tr>
+   	<strong>
+   		<th> id </th>
+    	<th> nom </th>
+	</tr></strong>';
+echo '</table>';
+while ($donnees =  $req->fetch()){
+	echo '<table>';
+	echo '<tr> 
+		<td>'.htmlspecialchars($donnees['id']).'</td>
+   		<td>'.($donnees['nom']).'</td>
+ 	</tr>';
+}
+echo '</table>';
+$req->closeCursor();  
+?>
+
 <input type="submit" value=" Enregistrer "/>
 </form>
 <hr/>
-<FORM ACTION="index.php">
-<input type="submit" value=" Retour "/>
-</FORM>
+<input type="button" value=" Retour " onclick="javascript:location.href='index.php'">
 </body>
 </html>

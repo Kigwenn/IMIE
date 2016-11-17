@@ -13,12 +13,12 @@ echo "<br/>";
 
 $bdd = new PDO('mysql:host=localhost; dbname=gest_bien; charset=utf8','root','Idefix72!');
 
-$req = $bdd->prepare('INSERT INTO bien(nom, prix, surface, fk_type) VALUE( :nom, :prix, :surface, :fk_type)');
+$req = $bdd->prepare('INSERT INTO bien(nom, prix, surface, type) VALUE( :nom, :prix, :surface, :type)');
 $req -> execute(array(
 		'nom'=>$_POST['nom'],
 		'prix'=>$_POST['prix'],
 		'surface'=>$_POST['surface'],
-		'fk_type'=>$_POST['fk_type'],
+		'type'=>$_POST['type'],
 		));
 
 //var_dump($req->errorInfo());
@@ -26,8 +26,6 @@ $req -> execute(array(
 echo 'Resultat enregistrer !';
 ?>
 <hr/>
-<FORM ACTION="index.php">
-<input type="submit" value=" Retour "/>
-</FORM>
+<input type="button" value=" Retour " onclick="javascript:location.href='index.php'">
 </body>
 </html>
