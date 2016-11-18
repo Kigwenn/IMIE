@@ -24,6 +24,8 @@ echo '<table>';
 	    	<th> type </th>
 	    	<th> option </th>
 	    	<th> qté </th>
+	    	<th> photos </th>
+
 	    </tr>';
 echo '</table>';
 while ($donnees = $req->fetch()) {
@@ -36,14 +38,13 @@ echo '<tr>
    	<td>'.$type[($donnees['type'])-1].'</td>
    	<td>'.($donnees['nom2']).'</td>
    	<td>'.($donnees['qte']).'</td>
+   	<td><input type="button" value=" Ajouter " onclick="top.location=\'photo.php?id='.$donnees['id'].'\'"></td>
 </tr>';
 }
 echo '</table>';
 $req->closeCursor();  
 ?>
 <hr/>
-<FORM ACTION="pre_post.php">
-<input type="submit" value=" Ajout d'un bien "/>
-</FORM>
+<input type="button" value=" Ajouter un bien " onclick="javascript:location.href='pre_post.php'">
 </body>
 </html>
