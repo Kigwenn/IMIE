@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> image - etc</title>
+        <meta name="description" content="Présentation de mon cv">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/normalize.min.css">
+        <link rel="stylesheet" href="css/main.css">
+    <style>
+        body{
+            margin: 0;
+            }
+         
+        #div0 {
+            width: 600px;
+            height: 400px;
+            background:url("img/image-de-paysage-4-150x150.jpg") repeat;
+            }
+        
+        #div1 {
+            width: 600px;
+            height: 400px;
+            background:url("img/image-de-paysage-4-150x150.jpg") repeat-x;
+            }
+
+        #div2 {
+            width: 600px;
+            height: 400px;
+            background:url("img/image-de-paysage-4-150x150.jpg") repeat-y;
+             }
+        
+        #div3 {
+            width: 100%;
+            height: 400px;
+            background:url("img/image-de-paysage-4-150x150.jpg") background-size: contain;
+             }
+
+        #div4 {
+            width: 100%;
+            height: 400px;
+            background:url("img/sprites.png") background-size: cover;
+             }
+
+        #div5 {
+            width: 100%;
+            height: 400px;
+            background:url("img/image-de-paysage-4-150x150.jpg") background-size: cover;
+             }
+
+        #social div{
+            background: url("img/sprites.png");
+            background-repeat: no-repeat;
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            }
+        #social div:nth-child(1)
+            {
+            background-position: -91px -166px;
+            }
+        #social div:nth-child(1):hover
+            {
+            background-position: -91px -466px;
+            }
+        #social div:nth-child(2)
+            {
+            background-position: -152px -166px;
+            }
+        #social div:nth-child(2):hover
+            {
+            background-position: -152px -466px;
+            }
+        #social div:nth-child(3)
+            {
+            background-position: -212px -166px;
+            }
+        #social div:nth-child(3):hover
+            {
+            background-position: -212px -466px;
+            }
+        #social div:nth-child(4)
+            {
+            background-position: -272px -166px;
+            }
+        #social div:nth-child(4):hover
+            {
+            background-position: -272px -466px;
+            }            
+
+    </style>
+    </head>
+    <body>
+        <div id="div0">
+        </div>
+        <br/>
+
+        <div id="div1">
+        </div>
+        <br/>
+        
+        <div id="div2">
+        </div>
+        <br/>
+        
+        <div id="div3">
+        </div>
+        <br/>
+        
+        <div id="div4">
+        </div>
+        <br/>
+
+        <section id="social">
+            <div>
+            </div>
+            <div>
+            </div>
+            <div>
+            </div>
+            <div>
+            </div>
+        </section>
+        <script src="src=js/vendor/jquery-1.11.2.min.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
