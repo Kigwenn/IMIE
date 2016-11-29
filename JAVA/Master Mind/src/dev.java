@@ -23,7 +23,6 @@ public class dev {
 		System.out.println("| MASTER MIND |");
 		System.out.println("+-------------+");
 		System.out.println("");
-		System.out.println("Gagne et tu auras le droit a un porno !!!");
 
 /*=========================================================
  *  			Tirage aleatoire	
@@ -39,7 +38,7 @@ public class dev {
  *  			  nb Essais	
   =========================================================*/	
 
-			System.out.println("\nNombre d'essai: ");
+			System.out.println("\nEntrer le nombre de tentative: ");
 
 			Scanner sc1;
 			sc1 = new Scanner(System.in);
@@ -69,7 +68,7 @@ public class dev {
 		 *  			Saisie des propositions	
 		  =========================================================*/				
 			
-			for (int i=0 ; i<5 ; i++ ){
+			/*for (int i=0 ; i<5 ; i++ ){
 				Scanner sc;
 				sc = new Scanner(System.in);
 				System.out.println("\nSaisissez un chiffre entre de 1 à 9");
@@ -84,19 +83,18 @@ public class dev {
 
 			if (exit == 5){
 				nb = essais;
-			}
+			}*/
 			
-			/*		for (int i=0 ; i<5 ; i++ ){
+					for (int i=0 ; i<5 ; i++ ){
 				
 				do {
 					c =0;
 					System.out.println("\nSaisissez un chiffre.");
 					Scanner sc;
 					sc = new Scanner(System.in);
-					String s = sc.nextLine();
-					c = new Integer(s);
+					c = sc.nextInt();
 					System.out.print(c);
-				} while ( c<10 );
+				} while (c<0 || c>8);
 				System.out.println("\nsuis passé");
 				proposition[i] = c;
 
@@ -108,7 +106,7 @@ public class dev {
 
 			if (exit == 5){
 				nb = essais;
-			} */
+			} 
 
 
 		/*=========================================================
