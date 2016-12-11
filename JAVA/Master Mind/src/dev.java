@@ -169,9 +169,9 @@ public class dev {
 						
 		} while (nb < essais || egale == 4 );
 		
-	//	System.out.println("\nnb :"+nb);
-	//	System.out.println("essais :"+essais);
-	//	System.out.println("egale :"+egale);
+		System.out.println("\nnb :"+nb);
+		System.out.println("essais :"+essais);
+		System.out.println("egale :"+egale);
 		
 		if (exit == 5){
 			System.out.print("\n Tu as abandonner, loser!");
