@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
 public class Plateau {
-	
 
 //==== Attributs ================================================
 	
@@ -21,10 +20,11 @@ public class Plateau {
 	
 //==== Constructeurs ============================================	
 
-public Plateau(int nbPions, int nbEssais) {
+	public Plateau(int nbPions, int nbEssais) {
 		initClone(nbPions);
 		int bienPlace, malPlace, tours ;
 		bienPlace = malPlace = tours = 0;
+		boolean perdu;
 		tours = nbEssais;
 
 
@@ -49,31 +49,24 @@ public Plateau(int nbPions, int nbEssais) {
 		do{ 
 			tours-= 1;
 			System.out.println("┌───────────────────────────────────────────────────────────┐");
-			System.out.println("│                    A VOUS DE JOUER                        │");
-			System.out.println("└───────────────────────────────────────────────────────────┘");
+			System.out.println("│   A VOUS DE JOUER               Il vous restera "+(tours)+" Essais  │");
+			System.out.println("└───────────────────────────────────────────────────────────┘\n");
 			test = saisies(nbEssais);
 			infoTest(test);
-			System.out.println("│                                                           │");
-			System.out.print("│  Il y a "+bienPlaces(tirage,test)+" pion(s) bien placé(s)");
-			System.out.println(" et "+malPlaces(tirage,test) +" pion(s) mal placé(s) │");
-			System.out.println("└───────────────────────────────────────────────────────────┘");	
 			bienPlace = bienPlaces(tirage,test);
 			malPlace = malPlaces(tirage,test);
+			System.out.println("│                                                           │");
+			System.out.print("│  Il y a "+bienPlace+" pion(s) bien placé(s)");
+			System.out.println(" et "+malPlace+" pion(s) mal placé(s) │");
+			System.out.println("└───────────────────────────────────────────────────────────┘");	
 			exit = exit(test);
 			reset(cloneTirage,tirage);
-			perdu = nbEssais(nbEssais);
-			System.out.println(bienPlace);
-			System.out.println(perdu);
-			System.out.println(tours);
-			System.out.println(exit);
-			
-		} while(perdu != true  && bienPlace != 5 && exit != true ); 
+			perdu = nbEssais(tours);
+	
+		} while(perdu != true && bienPlace != 5 && exit != true ); 
 			
 		resultat (perdu, bienPlace, exit );
-		
-		System.out.println("fini");
 	}
-
 
 //==== Methodes ============================================		
 	
@@ -115,11 +108,9 @@ public Plateau(int nbPions, int nbEssais) {
 	
 	public boolean nbEssais(int nbEssais) {
 		if(nbEssais != 0){
-		 return false;	
+			return false;
 		}
-		else{
-			return true;
-		}
+		return true;	
 	}
 
 	public int bienPlaces(Pion[] tirage,Pion[] test) {
@@ -157,26 +148,12 @@ public Plateau(int nbPions, int nbEssais) {
 		return sortie;			
 	}
 	
-//====================================	
-//==========   get/set   ============= 	
-//==================================== 	
-
-	public Pion[] getCloneTirage() {
-		return cloneTirage;
-	}
-
-	public void setCloneTirage(Pion[] cloneTirage) {
-		this.cloneTirage = cloneTirage;
-	}
-
-//====================================	
-//==========  Affichage  ============= 	
-//==================================== 	
+//=========================== Affichage  ========================================================== 	
 	
 	public void infoTirage(Pion tirage[]){ 
 		System.out.println("\n             La combinaison gagnante a trouver : ");
 		System.out.print("                       ");
-		for (int i=0 ; i<5 ; i++ ){
+		for (int i=0 ; i<tirage.length ; i++ ){
 			int t = tirage[i].getCouleur() ;
 
 			System.out.print(" "+ t);
@@ -185,22 +162,19 @@ public Plateau(int nbPions, int nbEssais) {
 		System.out.println(" ───────────────────────────────────────────────────────────");
 	}
 
-
-
 	public void infoTest(Pion test[]){
 		System.out.println("┌───────────────────────────────────────────────────────────┐");
-		System.out.print("│      Proposition du joueur :  ");
+		System.out.print("│           Proposition du joueur :  ");
 		for (int i=0 ; i<test.length ; i++ ){
 			int p = test[i].getCouleur() ;
 			System.out.print(" "+ p);
 		}
-		System.out.println("                  │");
+		System.out.println("             │");
 		System.out.println("├───────────────────────────────────────────────────────────┤");
 	}
 
-
 	public void reset(Pion clone[], Pion reset[]){
-		for (int i=0 ; i<5 ; i++ ){
+		for (int i=0 ; i<clone.length ; i++ ){
 			int c = clone[i].getCouleur();
 			reset[i].setCouleur(c);
 		}
@@ -216,13 +190,13 @@ public Plateau(int nbPions, int nbEssais) {
 
 	public void resultat(Boolean perdu, int gagner, Boolean exit ){	
 		if (exit == true ){
-			System.out.print("\n Tu as abandonner, loser!");
+			System.out.print("\n                  Tu as abandonner, loser!");
 		}
 		if ( gagner == 5){
-			System.out.print("\n BRAVO VOUS AVEZ GAGNER !");
+			System.out.print("\n                  BRAVO VOUS AVEZ GAGNER !");
 		}
 		else if ( perdu == true ) {
-			System.out.print("\n vous n'avez plus d'essais ");
+			System.out.print("\n                  Vous n'avez plus d'essais ");
 		}
 	}
 
