@@ -1,0 +1,71 @@
+Exercice de cours JAVA - Objet - SQL
+
+MasterMind	le	retour	!	
+	
+	
+Vous	êtes	maintenant	capable	de	gérer	une	base	de	données	avec	Java	et	JDBC.	Nous pouvons	alors	améliorer	notre
+MasterMind	!		
+	
+Le	MasterMind	2.0	devra	répondre	aux	spécificités	suivantes	:	
+	
+- Un	utilisateur	peut	créer	un	compte	avec	un	login	et	un	mot	de	passe	ou	alors	se connecter	en	tant	qu’invité	
+- En	se	connectant	le	programme	vérifie	le	nom	de	login	et	le	mdp	et	indique	si	c’est	le login	ou	le	mdp	qui	est
+  incorrect	
+- Un	menu	apparait	quand	on	se	connecte	(appelé	menu	joueur),	il	propose	alors	au joueur	de	consulter	l’historique
+  de	ses	5	dernières	parties	
+    
+    o Afficher	s’il	a	gagné	ou	pas	
+    o En	combien	de	coups	
+    o Afficher	la	combinaison	gagnante	etc.	
+    o Ajouter	l’option	ou	l’utilisateur	décide	du	nombre	de	parties	à	afficher	
+    
+- Le	menu	joueur	propose	également	de	jouer	au	MasterMind	!!!	
+- En	tant	qu’invité,	le	score	du	joueur	sera	sauvegardé	sur	le	compte	invité	
+- Le	menu	principal	(sans	être	connecté	avec	son	login)	propose	de	consulter l’historique	des	parties,	l’utilisateur
+  devra	signaler	combien	de	parties	il	souhaite	
+  afficher	(ex	:	les	10	dernières	parties)	
+  
+  o Le	même	type	d’info	sera	affiché	que	pour	l’historique	personnel	
+  
+- Le	menu	principal	propose	également	de	se	connecter	à	son	compte	ou	de	jouer	une	partie	en	tant	qu’invité	
+	
+	
+Avant	de	vous	lancer	n’importe	comment,	prenez	le	temps	de	bien	modéliser	votre	BDD	!	
+Analysez	bien	les	données	nécessaires,	de	quoi	vous	aurez-besoin,	quelles	sont	les	futures	améliorations	que	vous
+pourrez	y	apporter	plus	tard	etc.		
+	
+Une	bonne	modélisation	vous	évitera	de	grosses	pertes	de	temps	!!!	Une	fois	que	la	
+modélisation	de	votre	BDD	vous	semble	pertinente,	GO	!		
+	
+Ps	:	un	petit	schéma	UML	ne	fera	certainement	pas	de	mal	non	plus...	Migrer	son	
+MasterMind	en	objet	ne	pourra	être	qu’un	gros	gain	de	temps	!	
+	
+	
+Bonus	:	
+	
+- Créer	3	niveaux	(facile,	intermédiaire,	difficile)	
+- Le	niveau	de	difficulté	est	demandé	au	départ	d’une	partie	
+- La	BDD	doit	stocker	ces	niveaux	et	indiquer	combien	de	coups	il	est	possible d’effectuer	(7	coups	en	difficile,
+  15	en	intermédiaire	et	30	en	facile)	
+- L’historique	devra	afficher	cette	nouvelle	donnée	-
+ 
+  o L’affichage	d’un	historique	devra	demander	à	l’utilisateur	s’il	souhaite	afficher que	les	parties	d’un	certain
+    niveau	ou	tous	niveaux	
+    Une	partie	gagnée	rapporte	un	certain	nombre	de	points	qui	respecte	la	formule	suivante	:	
+  o nbPts	=	(nbCoupsMax	–	nbCoups)	*	NIVEAU	où	
+
+        § NIVEAU	=	100	en	niveau	facile	
+        § NIVEAU	=	200	en	niveau	intermédiaire	
+        § NIVEAU	=	400	en	niveau	difficile	
+        § Exemple	:	En	niveau	difficile,	gagner	en	4	coups	va	rapporter	(7-4)	*	400	=	1200	pts		
+
+  Le	menu	principal	et	le	menu	joueur	propose	une	option	classement		
+
+  o On	choisit	la	difficulté	
+  o La	console	affiche	alors	les	10	meilleurs	résultats	avec	le	nom	du	joueur associé	
+	
+	
+Bonus	++	:		
+	
+- Soyez	créatifs,	ajoutez	toute	autre	fonction	que	vous	jugez	nécessaire	à	ce	Master Mind	2.0	et	soumettez-moi	vos	idées
+  afin	que	je	puisse	les	juger	Mouahahahah	!	
