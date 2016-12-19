@@ -14,13 +14,15 @@ public class Plateau {
 	private boolean perdu;
 	private boolean exit;
 	
+	private Joueur joueur;
 	private Pion[] tirage;
 	private Pion[] cloneTirage;
 	private Pion[] test;
 	
 //==== Constructeurs ============================================	
 
-	public Plateau(int nbPions, int nbEssais) {
+	public Plateau(int nbPions, int nbEssais, Joueur j) {
+		joueur = j;
 		initClone(nbPions);
 		int bienPlace, malPlace, tours ;
 		bienPlace = malPlace = tours = 0;
@@ -36,7 +38,7 @@ public class Plateau {
 		System.out.println("            Bienvenue dans le jeu du Mastermind");
 		System.out.println("");
 		System.out.println("    la regle est simple, trouvez la combinaison gagnante!");
-		System.out.println("  Il y a "+nbEssais+" chiffres a trouver, ils sont compris entre 1 et 9");
+		System.out.println("  Il y a "+nbPions+" chiffres a trouver, ils sont compris entre 1 et 9");
 		System.out.println("     on peu quiter la partie en saisissant le chiffre 0");
 		System.out.println("");
 		System.out.println("                     A vous de jouer !");
@@ -51,7 +53,7 @@ public class Plateau {
 			System.out.println("┌───────────────────────────────────────────────────────────┐");
 			System.out.println("│   A VOUS DE JOUER               Il vous restera "+(tours)+" Essais  │");
 			System.out.println("└───────────────────────────────────────────────────────────┘\n");
-			test = saisies(nbEssais);
+			test = saisies(nbPions);
 			infoTest(test);
 			bienPlace = bienPlaces(tirage,test);
 			malPlace = malPlaces(tirage,test);
@@ -63,7 +65,7 @@ public class Plateau {
 			reset(cloneTirage,tirage);
 			perdu = nbEssais(tours);
 	
-		} while(perdu != true && bienPlace != 5 && exit != true ); 
+		} while(perdu != true && bienPlace != nbPions && exit != true ); 
 			
 		resultat (perdu, bienPlace, exit );
 	}
@@ -92,7 +94,7 @@ public class Plateau {
 		int s = 0;
 		for (int i=0 ; i<n ; i++ ){
 			do {
-				System.out.print("                       "+(i+1)+"/5 saisie : ");
+				System.out.print("                       "+(i+1)+"/"+n+" saisie : ");
 				Scanner sc;
 				sc = new Scanner(System.in);
 				s = sc.nextInt();
@@ -131,7 +133,7 @@ public class Plateau {
 				if ( i != j && tirage[i].getCouleur() == test[j].getCouleur() && test[j].getCouleur() != 0 && tirage[i].getCouleur() != 0){
 					mp = mp +1;
 					test[j].setCouleur(0);
-					j=5;
+					j=tirage.length;
 				}
 			}
 		}
@@ -169,7 +171,7 @@ public class Plateau {
 			int p = test[i].getCouleur() ;
 			System.out.print(" "+ p);
 		}
-		System.out.println("             │");
+		System.out.println("               │");
 		System.out.println("├───────────────────────────────────────────────────────────┤");
 	}
 
