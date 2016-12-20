@@ -5,18 +5,20 @@ public class Mer extends Eau {
 			
 //==== Constructeurs ============================================	
 
-	public Mer(String nom, int poid, int nbNageoires) {
-		super(nom, poid, nbNageoires);
+	public Mer(String nom, int poids, int nbNageoires) {
+		super(nom, poids, nbNageoires);
+		System.out.println("├─ Le "+nom+" vient de voir le jour");
+		System.out.println("");
 	}
 	
 //==== Methodes =================================================
 	
 	public String toString() {
-		return super.toString()+"+ Je suis de Type : Mer \n";
+		return super.toString()+"└ Je suis de Type : Mer \n";
 	}		
 	
 	public double vitesse(){
-		double v = (poid/25)*nbNageoires;
+		double v = (poids/25)*nbNageoires;
 		return v;
 	}
 	

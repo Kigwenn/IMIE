@@ -8,8 +8,8 @@ abstract public class Terre extends Pokemon {
 	
 //==== Constructeurs ============================================
 				
-	public Terre(String nom, int poid, int nbPattes, double taille) {
-		super(nom, poid);
+	public Terre(String nom, int poids, int nbPattes, double taille) {
+		super(nom, poids);
 		this.nbPattes = nbPattes;
 		this.taille = taille;
 	}
@@ -18,7 +18,7 @@ abstract public class Terre extends Pokemon {
 
 	@Override
 	public String toString() {
-		return super.toString()+"+ Je me deplace sur la terre et j'ai " + nbPattes + " pattes.\n+ j'ai une taille de " + taille + " m.\n";
+		return super.toString()+"├ Je me deplace sur la terre et j'ai " + nbPattes + " pattes.\n├ j'ai une taille de " + taille + " m.\n";
 	}
 	
 	public double vitesse(){

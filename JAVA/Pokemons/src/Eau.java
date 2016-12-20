@@ -7,15 +7,15 @@ abstract public class Eau extends Pokemon  {
 	
 //==== Constructeurs ============================================	
 				
-	public Eau(String nom, int poid, int nbNageoires) {
-		super(nom, poid);
+	public Eau(String nom, int poids, int nbNageoires) {
+		super(nom, poids);
 		this.nbNageoires = nbNageoires;
 	}
 	
 //==== Methodes =================================================
 
 	public String toString() {
-		return super.toString()+"+ Je me deplace dans l'eau et j'ai " + nbNageoires + " nageoires.\n";
+		return super.toString()+"├ Je me deplace dans l'eau et j'ai " + nbNageoires + " nageoires.\n";
 	}
 
 	

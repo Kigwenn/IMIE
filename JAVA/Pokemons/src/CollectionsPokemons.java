@@ -1,50 +1,55 @@
+import java.util.ArrayList;
+import java.util.Iterator;
+
 
 public class CollectionsPokemons {
 	//==== Attributs ================================================		
 	
-		private Pokemon[] tab ;
-		private int numLig = 0;
-
+		private ArrayList list ;
+		
+	
 	//==== Constructeurs ============================================
 		
 		public CollectionsPokemons() {
-			this.tab = new Pokemon[50];
+			this.list = new ArrayList();
+			System.out.println("      Une liste de collection à été creer !");
+			System.out.println("          ─────────────────────────────    \n");
 		}
 		
 	//==== Methodes ===================================================	
 		
 		public void listPokemons() {
-			for( int i=0 ; i<this.tab.length ; i++){
-				if (tab[i]!=null){
-					System.out.println(tab[i].toString());
-				}
+			Iterator <Pokemon> i = list.iterator();
+			while(i.hasNext()){
+				Pokemon x = (Pokemon)i.next();
+				System.out.println("                  ─ "+x.nom);
 			}
+			
 		}
 		
 		public void ajoutPokemons(Pokemon idPokemon) {
+			this.list.add(idPokemon) ;
+			System.out.println("le pokemon "+idPokemon.nom+" a bien ete ajouter a la liste !\n");
+		}
+					
+/*		public void DelPokemons(String nom){
+			Pokemon idPokemon
 			this.tab[numLig] = idPokemon;
 			System.out.println("le pokemon :\n" + tab[numLig] + " est bien ete ajouter !\n");
 			numLig = numLig +1;
 			
 		}
-		
-		public void DelPokemons(String nom){
-				Pokemon idPokemon
-			this.tab[numLig] = idPokemon;
-			System.out.println("le pokemon :\n" + tab[numLig] + " est bien ete ajouter !\n");
-			numLig = numLig +1;
-			
-		}
-
-/*		public void VitesseMoyenne(){
+*/
+		public void VitesseMoyenne(){
 			double sum = 0;
-			
-			for( int i=0 ; i< numLig ; i++){
-				sum = sum +this.tab[i].get();
+			Iterator <Pokemon> i = list.iterator();
+			while(i.hasNext()){
+				Pokemon x = (Pokemon)i.next();
+				sum = sum +x.vitesse();
 			}
-			double moy = Math.round((sum/numLig)* 100.0) / 100.0;
-			System.out.println("La moyenne des produits est de "+moy+" €");
-
-	*/
+			System.out.println("\n┌──────────────────────────────────────────────────┐");
+			System.out.println(" la vitesse moyenne des pokemons est de "+sum+" Km/h !");
+			System.out.println("└──────────────────────────────────────────────────┘\n");
+		}	
 	
 }

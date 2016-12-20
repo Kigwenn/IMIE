@@ -11,13 +11,15 @@ public class Sportif extends Terre {
 		int frequenceCadiaque) {
 		super(nom, poid, nbPattes, taille);
 		this.frequenceCadiaque = frequenceCadiaque;
+		System.out.println("├─ Le "+nom+" vient de voir le jour");
+		System.out.println("");
 	}
 		
 //==== Methodes =================================================
 	
 	@Override
 	public String toString() {
-		return super.toString()+"+ Je suis de Type : Sportif\n+ Ma frequence cadiaque est de " +frequenceCadiaque + " pulsations à la minute\n";
+		return super.toString()+"├ Je suis de Type : Sportif\n└ Ma frequence cadiaque est de " +frequenceCadiaque + " pulsations à la minute\n";
 	}
 	
 //==== Getter / Setter ==========================================		
