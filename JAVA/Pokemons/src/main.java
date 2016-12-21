@@ -17,6 +17,7 @@ public class main {
 		Pokemon pok2 = new Casanier("Salameche", 12, 2, 0.65, 8);
 		Pokemon pok3 = new Mer("Ondoudou", 45, 2);
 		Pokemon pok4 = new Croisiere("Bulbizarre", 15, 3);
+		Pokemon pok5 = new Croisiere("Bulbizarre", 15, 3);
 		
 		System.out.println("");
 		System.out.println("     ┌────────────────────────────────────┐");
@@ -41,6 +42,7 @@ public class main {
 		liste1.ajoutPokemons(pok2);
 		liste1.ajoutPokemons(pok3);
 		liste1.ajoutPokemons(pok4);
+		liste1.ajoutPokemons(pok5);
 		
 		System.out.println("");
 		System.out.println("     ┌────────────────────────────────────┐");
@@ -49,6 +51,23 @@ public class main {
 		System.out.println("");
 		
 		liste1.listPokemons();
+		liste1.VitesseMoyenne();
+		
+		System.out.println("");
+		System.out.println("     ┌────────────────────────────────────┐");
+		System.out.println("     │         Effacer un Pokemon         │");
+		System.out.println("     └────────────────────────────────────┘");
+		System.out.println("");
+		
+		liste1.delPokemons(pok3);
+		liste1.listPokemons();
+		
+		
+		System.out.println("");
+		System.out.println("     ┌────────────────────────────────────┐");
+		System.out.println("     │     Affiche la liste de Pokemon    │");
+		System.out.println("     └────────────────────────────────────┘");
+		System.out.println("");
 		
 		liste1.VitesseMoyenne();
 		

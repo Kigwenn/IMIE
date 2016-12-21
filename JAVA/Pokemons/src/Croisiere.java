@@ -1,9 +1,9 @@
 
 public class Croisiere extends Eau {
 
-//==== Attributs ================================================
+//───── Attributs ───────────────────────────────────────────────
 		
-//==== Constructeurs ============================================	
+//───── Constructeurs ────────────────────────────────────────────	
 
 	public Croisiere(String nom, int poids, int nbNageoires) {
 		super(nom, poids, nbNageoires);
@@ -11,7 +11,7 @@ public class Croisiere extends Eau {
 		System.out.println("");
 	}
 	
-//==== Methodes =================================================
+//───── Methodes ─────────────────────────────────────────────────
 
 	public String toString() {
 		return super.toString()+"└ Je suis de Type : Croisiere \n";
@@ -21,6 +21,6 @@ public class Croisiere extends Eau {
 		double v = ((poids/25)*nbNageoires)/2;
 		return v;
 	}	
-//==== Getter / Setter ==========================================		
+//───── Getter / Setter ──────────────────────────────────────────		
 
 }

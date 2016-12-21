@@ -1,9 +1,9 @@
 
 public class Mer extends Eau {
 	
-//==== Attributs ================================================
+//───── Attributs ────────────────────────────────────────────────
 			
-//==== Constructeurs ============================================	
+//───── Constructeurs ────────────────────────────────────────────	
 
 	public Mer(String nom, int poids, int nbNageoires) {
 		super(nom, poids, nbNageoires);
@@ -11,7 +11,7 @@ public class Mer extends Eau {
 		System.out.println("");
 	}
 	
-//==== Methodes =================================================
+//───── Methodes ─────────────────────────────────────────────────
 	
 	public String toString() {
 		return super.toString()+"└ Je suis de Type : Mer \n";
@@ -22,6 +22,6 @@ public class Mer extends Eau {
 		return v;
 	}
 	
-//==== Getter / Setter ==========================================		
+//───── Getter / Setter ──────────────────────────────────────────		
 
 }

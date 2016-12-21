@@ -1,11 +1,11 @@
 
 public class Casanier extends Terre {
 
-//==== Attributs ================================================
+//───── Attributs ────────────────────────────────────────────────
 	
 	private int heureJeu;
 		
-//==== Constructeurs ============================================	
+//───── Constructeurs ────────────────────────────────────────────		
 
 	public Casanier(String nom, int poids, int nbPattes, double taille,	int heureJeu) {
 		super(nom, poids, nbPattes, taille);
@@ -14,13 +14,26 @@ public class Casanier extends Terre {
 		System.out.println("");
 	}
 	
-//==== Methodes =================================================
+//───── Methodes ─────────────────────────────────────────────────
 
 	public String toString() {
 		return super.toString()+"└ Je suis de Type : Casanier, je joue " + heureJeu + " heure par jour\n";
 	}
-	
-//==== Getter / Setter ==========================================		
+
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!super.equals(obj))
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Casanier other = (Casanier) obj;
+		if (heureJeu != other.heureJeu)
+			return false;
+		return true;
+	}
+		
+//───── Getter / Setter ──────────────────────────────────────────		
 
 	public int getHeureJeu() {
 		return heureJeu;

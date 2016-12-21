@@ -1,12 +1,12 @@
 
 abstract public class Pokemon {
 
-//==== Attributs ================================================
+//───── Attributs ────────────────────────────────────────────────
 	
 	protected String nom;
 	protected int poids;
 	
-//==== Constructeurs ============================================
+//───── Constructeurs ────────────────────────────────────────────
 	
 	public Pokemon(String nom, int poids) {
 			super();
@@ -14,15 +14,33 @@ abstract public class Pokemon {
 			this.poids = poids;
 		}
 
-//==== Methodes =================================================
+//───── Methodes ─────────────────────────────────────────────────
 	
 	public String toString() {
 		return "┌ Je suis le pokémon " + nom + ".\n├ Mon poids est de " + poids + "kg.\n";
 	}
 	
 	abstract double vitesse();
+
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Pokemon other = (Pokemon) obj;
+		if (nom == null) {
+			if (other.nom != null)
+				return false;
+		} else if (!nom.equals(other.nom))
+			return false;
+		if (poids != other.poids)
+			return false;
+		return true;
+	}
 	
-//==== Getter / Setter ==========================================	
+//───── Getter / Setter ──────────────────────────────────────────		
 	
 	public String getNom() {
 		return nom;
@@ -37,4 +55,5 @@ abstract public class Pokemon {
 	public void setPoid(int poids) {
 		this.poids = poids;
 	}
+	
 }

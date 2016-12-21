@@ -1,11 +1,11 @@
 
 public class Sportif extends Terre {
 
-//==== Attributs ================================================
+//───── Attributs ────────────────────────────────────────────────
 	
 	private int frequenceCadiaque;
 		
-//==== Constructeurs ============================================	
+//───── Constructeurs ────────────────────────────────────────────	
 	
 	public Sportif(String nom, int poid, int nbPattes, double taille,
 		int frequenceCadiaque) {
@@ -15,14 +15,27 @@ public class Sportif extends Terre {
 		System.out.println("");
 	}
 		
-//==== Methodes =================================================
+//───── Methodes ─────────────────────────────────────────────────
 	
-	@Override
+
 	public String toString() {
 		return super.toString()+"├ Je suis de Type : Sportif\n└ Ma frequence cadiaque est de " +frequenceCadiaque + " pulsations à la minute\n";
 	}
+		
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!super.equals(obj))
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Sportif other = (Sportif) obj;
+		if (frequenceCadiaque != other.frequenceCadiaque)
+			return false;
+		return true;
+	}
 	
-//==== Getter / Setter ==========================================		
+//───── Getter / Setter ──────────────────────────────────────────	
 
 	public int getFrequenceCadiaque() {
 		return frequenceCadiaque;
@@ -31,5 +44,6 @@ public class Sportif extends Terre {
 	public void setFrequenceCadiaque(int frequenceCadiaque) {
 		this.frequenceCadiaque = frequenceCadiaque;
 	}
+
 	
 }
