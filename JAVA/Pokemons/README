@@ -1,0 +1,34 @@
+- Exercice
+
+On va maintenant modéliser des Pokemons un peu particulier ! On s'intéresse à 4 catégories de Pokemons :
+  
+  - Les pokémons sportifs : Ils sont caractérisés par un nom, un poids, un nombre de pattes, une taille et une fréquence cardiaque.
+    Ces pokémons se déplacent sur la terre à une certaine vitesse que l'on peut calculer grâce à la formule suivante :
+    vitesse = nombre de pattes * taille * 3
+  
+  - Les pokémons casaniers : Ils sont caractérisés par un nom, un poids, un nombre de pattes, unetaille et le nombre d'heures par jour
+    à jouer sur son PC. Ces pokémons se déplacent sur la terre à une certaine vitesse que l'on peut calculer grâce à la formule
+    suivante : vitesse = nombre de pattes * taille * 3
+  
+  - Les pokémons des mers : Ils sont caractérisés par un nom, un poids et un nombre de nageoires.
+    Ces pokémons se déplacent dans la mer à une certaine vitesse que l'on peut calculer grâce à la formule suivante :
+    vitesse = poids/25 * nombre de nageoires.
+
+  - Les pokémons de croisière : Ils sont caractérisés par un nom, un poids et un nombre de nageoires.
+    Ces pokémons se déplacent dans la mer à une certaine vitesse que l'on peut calculer grâce à la formule suivante :
+    vitesse = (poids/25 * nombre de nageoires) / 2.
+
+Pour chacune des catégorie il y aura une méthode toString qui affiche toutes les caractéristiques du pokémon.
+Chaque pokemon possèdera un champs type qui aura pour valeur soit : Casanier, Sportif, Mer ou Croisière. On ne peut rentrer
+aucune autre valeur dans ce champs.
+
+Question 1 : Réaliser un diagramme de classe permettant de hiérarchiser vos pokémons.
+Question 2 : Programmer les classes en JAVA. Créer différentes instances de pokemons et affichez les en console.
+Question 3 : On désire maintenant définir une classe CollectionsPokemons qui contient une liste de pokémons de tout type.
+             Elle doit contenir en plus d'un constructeur, une méthode insererPokemon qui ajoute un pokemon à la collection et
+             une méthode qui calcule la vitesse moyenne de cette collection. Ecrire cette classe.
+             Attention la méthode insererPokemon doit interdire l'ajout d'un pokemon qui existe déjà ! Pensez à redéfinir
+             la méthode equals.
+Question 4 : Ajouter une méthode supprimerPokemon(String nom) qui supprimera tous les pokemons qui auront le même nom donné en paramètre.
+Question 5 : Ajouter à la classe CollectionPokemons la méthode vitesseMoyenneSportifs() qui retourne la vitesse moyenne des pokemons
+             sportifs de la liste. Plusieurs solutions sont envisageables.
