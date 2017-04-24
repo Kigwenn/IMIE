@@ -3,7 +3,7 @@
 <?php
 try
 {
-	$bdd = new PDO('mysql:host=localhost; dbname=chp_sport; charset=utf8','root','Idefix72!');
+	$bdd = new PDO('mysql:host=localhost; dbname=chp_sport; charset=utf8','root','********');
 }
 catch(Exception $e)
 {
